@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+  --background-image-brand: linear-gradient(
+    to right,
+    #ff5722 0%,
+    #d81b7e 50%,
+    #7c3aed 100%
+  );
+  --background-image-brand-button: linear-gradient(
+    to right,
+    #f97316 0%,
+    #ec4899 100%
+  );
+  --color-common-border: #e5e7eb;
+}

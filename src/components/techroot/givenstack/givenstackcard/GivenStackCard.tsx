@@ -2,6 +2,7 @@ import type { Itech } from "../../../../types/tech";
 import { SiTicktick } from "react-icons/si";
 import { FaStar } from "react-icons/fa";
 import type { Dispatch, SetStateAction } from "react";
+import { Slide, toast } from "react-toastify";
 
 interface IGivenStackCardProps {
   //no need to destructure "key"
@@ -30,6 +31,17 @@ const GivenStackCard = ({
     );
     tempSelectedStackArray.push(itech);
     setSelectedStackArray(tempSelectedStackArray);
+    toast.success(`${itech.name} Successfully added to your Stack!!!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+    });
   };
 
   return (

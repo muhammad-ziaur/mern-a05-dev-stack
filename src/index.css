@@ -13,5 +13,10 @@
     #f97316 0%,
     #ec4899 100%
   );
+  --background-image-techtitle: linear-gradient(
+    to right,
+    #ec4899 0%,
+    #8b5cf6 100%
+  );
   --color-common-border: #e5e7eb;
 }

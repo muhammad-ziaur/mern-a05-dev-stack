@@ -1,8 +1,15 @@
 const TechTitle = () => {
   return (
-    <section className="container mx-auto">
-      <h1 className="text-left text-black">Title Title Title Title Title</h1>
-      <p className="text-left text-black">Subtitle Subtitle Subtitle</p>
+    <section className="container mx-auto md:text-left text-center py-12">
+      <h1 className=" text-[#0F172A] text-center md:text-left font-bold md:text-4xl text-3xl pb-1">
+        Explore the{" "}
+        <span className="bg-techtitle bg-clip-text text-transparent">
+          Technologies
+        </span>
+      </h1>
+      <p className="text-[#475569] md:text-left text-center">
+        Pick one technology per category to build your ideal stack.
+      </p>
     </section>
   );
 };

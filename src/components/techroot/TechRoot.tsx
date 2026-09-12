@@ -18,10 +18,18 @@ const TechRoot = () => {
     Record<string, boolean>
   >({});
   return (
-    <section className="container mx-auto">
-      <div className="grid grid-cols-12 gap-4">
+    <section className="border-b-[0.05px] border-slate-200 pb-24">
+      <div className="container mx-auto grid grid-cols-12 gap-4">
         <div className="col-span-9">
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense
+            fallback={
+              <div>
+                <p className="text-xl font-semibold text-center text-[#94A3B8]">
+                  Loading technologies...
+                </p>
+              </div>
+            }
+          >
             <GivenStack
               givenStackPromise={givenStackPromise}
               givenStackArray={givenStackArray}

@@ -1,11 +1,8 @@
 import YourStack from "./yourstack/YourStack";
 import GivenStack from "./givenstack/GivenStack";
 import type { Itech } from "../../types/tech";
-import { Suspense, use, useState } from "react";
+import { Suspense, useState } from "react";
 
-interface ITechRootProps {
-  givenStackPromise: Promise<Itech[]>;
-}
 const fetchGivenStack = async (): Promise<Itech[]> => {
   const res = await fetch("./data.json");
   const data = await res.json();
@@ -15,21 +12,34 @@ const TechRoot = () => {
   const [givenStackPromise] = useState(() => fetchGivenStack());
   // const itechArray: Itech[] = use(givenStackPromise);//Error: using 'use' inside TechRoot without wrapping TechRoot itself within a Suspense
   // console.log(givenStackPromise);
-  const [selectedStackArray, setSelectedStackArray] = useState<Itech[]>([]);
+  const [selectedStackArray, setSelectedStackArray] = useState<Itech[]>([]); //Select first, show first in YourStack
   const [givenStackArray, setGivenStackArray] = useState<Itech[]>([]);
+  const [yourSelectedStackMap, setYourSelectedStackMap] = useState<
+    Record<string, boolean>
+  >({});
   return (
     <section>
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-9">
           <Suspense fallback={<p>Loading...</p>}>
             <GivenStack
-              givenStackArray={givenStackArray}
               givenStackPromise={givenStackPromise}
+              givenStackArray={givenStackArray}
+              setGivenStackArray={setGivenStackArray}
+              selectedStackArray={selectedStackArray}
+              setSelectedStackArray={setSelectedStackArray}
+              yourSelectedStackMap={yourSelectedStackMap}
+              setYourSelectedStackMap={setYourSelectedStackMap}
             />
           </Suspense>
         </div>
         <div className="col-span-3">
-          <YourStack />
+          <YourStack
+            selectedStackArray={selectedStackArray}
+            setSelectedStackArray={setSelectedStackArray}
+            yourSelectedStackMap={yourSelectedStackMap}
+            setYourSelectedStackMap={setYourSelectedStackMap}
+          />
         </div>
       </div>
     </section>

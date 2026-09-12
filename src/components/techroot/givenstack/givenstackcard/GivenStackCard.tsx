@@ -1,13 +1,42 @@
 import type { Itech } from "../../../../types/tech";
-import Symbol from "../../../../assets/Symbol.png";
+import { SiTicktick } from "react-icons/si";
+import { FaStar } from "react-icons/fa";
+import type { Dispatch, SetStateAction } from "react";
 
 interface IGivenStackCardProps {
   //no need to destructure "key"
   itech: Itech;
+  yourSelectedStackMap: Record<string, boolean>;
+  setYourSelectedStackMap: Dispatch<SetStateAction<Record<string, boolean>>>;
+  selectedStackArray: Itech[];
+  setSelectedStackArray: Dispatch<SetStateAction<Itech[]>>;
 }
-const GivenStackCard = ({ itech }: IGivenStackCardProps) => {
+const GivenStackCard = ({
+  itech,
+  yourSelectedStackMap,
+  setYourSelectedStackMap,
+  selectedStackArray,
+  setSelectedStackArray,
+}: IGivenStackCardProps) => {
+  const handleAddtoStack = () => {
+    const tempMap: Record<string, boolean> = {};
+    for (let key in yourSelectedStackMap)
+      tempMap[key] = yourSelectedStackMap[key];
+    tempMap[itech.id] = true;
+    setYourSelectedStackMap(tempMap);
+
+    const tempSelectedStackArray: Itech[] = selectedStackArray.map(
+      (elem: Itech) => elem,
+    );
+    tempSelectedStackArray.push(itech);
+    setSelectedStackArray(tempSelectedStackArray);
+  };
+
   return (
-    <div className="p-8 flex flex-col space-y-2 bg-white border border-[#F1F5F9]/80 rounded-2xl">
+    // <div className="p-8 flex flex-col space-y-2 bg-white border border-[#F1F5F9]/80 rounded-2xl">
+    <div
+      className={`p-8 flex flex-col space-y-2 bg-white border rounded-2xl ${yourSelectedStackMap[itech.id] ? "border-red-400" : "border-[#F1F5F9]/80"}`}
+    >
       <div className="flex justify-between">
         <img
           src={itech.icon}
@@ -34,7 +63,7 @@ const GivenStackCard = ({ itech }: IGivenStackCardProps) => {
       </div>
 
       <div className="flex justify-between items-center">
-        <div className="h-7 py-1 px-2 flex justify-center items-center border-0 rounded-[6px] bg-[#F1F5F9]/80">
+        <div className="h-7 py-1 px-2 flex justify-center items-center border-0 rounded-md bg-[#F1F5F9]/80">
           <p className="text-[15px] font-medium text-[#475569]">
             {itech.category}
           </p>
@@ -44,17 +73,33 @@ const GivenStackCard = ({ itech }: IGivenStackCardProps) => {
             {itech.difficulty}
           </p>
         </div>
-        <div className="flex justify-between items-center gap-1">
-          <img src={Symbol} alt="Rating icon" />
+        <div className="flex justify-between items-center gap-1.25">
+          <span className="text-yellow-400">
+            <FaStar />
+          </span>
           <p className="text-[15px] font-semibold text-[#334155]">
             {itech.rating}
           </p>
         </div>
       </div>
 
-      <button className="bg-[#0A0F1D] text-white border-0 rounded-lg py-2 cursor-pointer">
-        Add to Stack
-      </button>
+      {yourSelectedStackMap[itech.id] ? (
+        <button className="text-white border border-red-400 rounded-lg py-2 cursor-not-allowed flex flex-row justify-center items-center gap-1">
+          <span className="text-red-400 font-bold">
+            <SiTicktick />
+          </span>
+          <span className="text-red-400 font-bold">
+            <p> Added to Stack</p>
+          </span>
+        </button>
+      ) : (
+        <button
+          className="bg-[#0A0F1D] text-white border-0 rounded-lg py-2 cursor-pointer"
+          onClick={handleAddtoStack}
+        >
+          Add to Stack
+        </button>
+      )}
     </div>
   );
 };

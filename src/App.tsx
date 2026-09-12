@@ -1,8 +1,6 @@
-import { Suspense, useState } from "react";
 import Banner from "./components/Banner";
 import NavBar from "./components/NavBar";
 import TechRoot from "./components/techroot/TechRoot";
-import type { Itech } from "./types/tech";
 
 function App() {
   return (

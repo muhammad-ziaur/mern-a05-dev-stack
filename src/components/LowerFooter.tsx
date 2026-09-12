@@ -1,7 +1,7 @@
 import { FaRegCopyright } from "react-icons/fa";
 const LowerFooter = () => {
   return (
-    <section className="container mx-auto py-10">
+    <section className="container mx-auto py-8">
       <div className="text-[13px] text-[#94A3B8] flex justify-between items-center">
         <div className="flex justify-start items-center gap-0.5">
           <FaRegCopyright />

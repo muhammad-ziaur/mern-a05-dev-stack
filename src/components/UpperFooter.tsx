@@ -2,7 +2,7 @@ import logo from "../assets/logo-text.png";
 import { BsDot } from "react-icons/bs";
 const UpperFooter = () => {
   return (
-    <section className="container mx-auto border-b-[0.05px] border-slate-200 py-20">
+    <section className="container mx-auto border-b-[0.05px] border-slate-200 py-16">
       <div className="grid grid-cols-12 items-start">
         <div className="col-span-4 flex flex-col gap-4">
           <div>

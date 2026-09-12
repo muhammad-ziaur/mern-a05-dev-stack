@@ -18,7 +18,7 @@ const TechRoot = () => {
     Record<string, boolean>
   >({});
   return (
-    <section>
+    <section className="container mx-auto">
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-9">
           <Suspense fallback={<p>Loading...</p>}>

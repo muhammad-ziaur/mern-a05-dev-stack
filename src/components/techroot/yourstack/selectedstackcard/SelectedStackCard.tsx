@@ -31,21 +31,23 @@ const SelectedStackCard = ({
   };
 
   return (
-    <div className="p-4 flex flex-col space-y-2 bg-white border border-black rounded-2xl">
+    <div className="p-4 flex flex-col bg-white border border-slate-200 rounded-2xl">
       <div className="flex justify-between items-center">
         <div className="flex justify-between items-center gap-2">
           <img
             src={itech.icon}
             alt="card icon"
-            className="w-8 h-8 object-center object-cover"
+            className="w-5.5 h-5.5 object-center object-cover"
           />
-          <div className="flex flex-col">
-            <h2 className="text-xl text-black">{itech.name}</h2>
-            <p className="text-xs text-slate-700">{itech.category}</p>
+          <div className="flex flex-col justify-between items-start">
+            <h2 className="text-xl text-black font-semibold">{itech.name}</h2>
+            <p className="text-xs text-slate-700 font-semibold">
+              {itech.category}
+            </p>
           </div>
         </div>
         <span
-          className="text-slate-600 font-bold cursor-pointer"
+          className="text-2xl text-slate-400 font-semibold cursor-pointer"
           onClick={handleTechRemove}
         >
           <RxCross2 />

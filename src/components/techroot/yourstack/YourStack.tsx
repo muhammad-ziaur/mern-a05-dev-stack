@@ -23,9 +23,9 @@ const YourStack = ({
   };
 
   return (
-    <div className="p-8 flex flex-col space-y-8 bg-white border border-[#F1F5F9]/80 rounded-2xl">
+    <div className="p-8 flex flex-col gap-2 bg-white border border-[#F1F5F9]/80 rounded-2xl sticky top-24 z-40">
       <div>
-        <h2 className="text-3xl text-[#0F172A] text-left font-bold">
+        <h2 className="text-2xl text-[#0F172A] text-left font-bold">
           Your Stack
         </h2>
       </div>
@@ -40,7 +40,7 @@ const YourStack = ({
           </p>
         )}
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2 mt-5">
         {selectedStackArray.length === 0 ? (
           <EmptyCard />
         ) : (
@@ -61,7 +61,7 @@ const YourStack = ({
       <>
         {selectedStackArray.length !== 0 && (
           <button
-            className="text-red-700 font-bold border border-red-700 rounded-lg py-2 cursor-pointer flex flex-row justify-center items-center gap-1"
+            className="text-red-700 font-bold border border-red-700 rounded-lg py-2 cursor-pointer flex flex-row justify-center items-center mt-15"
             onClick={handleRemoveAll}
           >
             Remove All

@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <section
-      className="container bg-cyan-500 mx-auto min-h-100
+      className=" min-h-100
       flex justify-center items-center "
     >
       <h3 className="text-3xl text-red-700">Banner</h3>

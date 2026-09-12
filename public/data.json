@@ -9,8 +9,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Popular",
     "badgeColor": "#00d8ff",
-    "badgeBackgroundColor": "#e0fbff",
-    "badgeBorderColor": "#b2ebf2"
+    "badgeBackgroundColor": "#f0fdff",
+    "badgeBorderColor": "#cffafe"
   },
   {
     "id": "postgresql",
@@ -22,8 +22,8 @@
     "difficulty": "Intermediate",
     "badge": "Top SQL",
     "badgeColor": "#336791",
-    "badgeBackgroundColor": "#e8f0fe",
-    "badgeBorderColor": "#c2d7f0"
+    "badgeBackgroundColor": "#f4f7fb",
+    "badgeBorderColor": "#e2eaf4"
   },
   {
     "id": "typescript",
@@ -35,8 +35,8 @@
     "difficulty": "Intermediate",
     "badge": "Essential",
     "badgeColor": "#3178c6",
-    "badgeBackgroundColor": "#eef4fb",
-    "badgeBorderColor": "#cfe0f3"
+    "badgeBackgroundColor": "#f2f6fc",
+    "badgeBorderColor": "#dbeafe"
   },
   {
     "id": "tailwindcss",
@@ -48,8 +48,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Fast",
     "badgeColor": "#06b6d4",
-    "badgeBackgroundColor": "#e6fcfd",
-    "badgeBorderColor": "#b3f5f8"
+    "badgeBackgroundColor": "#ecfeff",
+    "badgeBorderColor": "#cffafe"
   },
   {
     "id": "nodejs",
@@ -61,8 +61,8 @@
     "difficulty": "Intermediate",
     "badge": "Runtime",
     "badgeColor": "#339933",
-    "badgeBackgroundColor": "#eefbee",
-    "badgeBorderColor": "#c7f0c7"
+    "badgeBackgroundColor": "#f3fbf3",
+    "badgeBorderColor": "#dcfce7"
   },
   {
     "id": "docker",
@@ -73,9 +73,9 @@
     "rating": 4.8,
     "difficulty": "Advanced",
     "badge": "Containers",
-    "badgeColor": "#2496ed",
-    "badgeBackgroundColor": "#eaf4fd",
-    "badgeBorderColor": "#bce0fb"
+    "badgeColor": "#0284C7",
+    "badgeBackgroundColor": "#f0f9ff",
+    "badgeBorderColor": "#e0f2fe"
   },
   {
     "id": "git",
@@ -87,8 +87,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Essential",
     "badgeColor": "#f05032",
-    "badgeBackgroundColor": "#fef2f0",
-    "badgeBorderColor": "#fcd6d0"
+    "badgeBackgroundColor": "#fff5f2",
+    "badgeBorderColor": "#fee2e2"
   },
   {
     "id": "vuejs",
@@ -100,8 +100,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Progressive",
     "badgeColor": "#42b883",
-    "badgeBackgroundColor": "#edfbf4",
-    "badgeBorderColor": "#c1f0db"
+    "badgeBackgroundColor": "#f2fbf7",
+    "badgeBorderColor": "#d1fae5"
   },
   {
     "id": "python",
@@ -113,8 +113,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Versatile",
     "badgeColor": "#3776ab",
-    "badgeBackgroundColor": "#eef4f9",
-    "badgeBorderColor": "#c8dfef"
+    "badgeBackgroundColor": "#f3f6fb",
+    "badgeBorderColor": "#e0e7ff"
   },
   {
     "id": "mongodb",
@@ -126,8 +126,8 @@
     "difficulty": "Intermediate",
     "badge": "NoSQL",
     "badgeColor": "#47a248",
-    "badgeBackgroundColor": "#edf7ed",
-    "badgeBorderColor": "#c2e6c3"
+    "badgeBackgroundColor": "#f2f8f2",
+    "badgeBorderColor": "#dcfce7"
   },
   {
     "id": "redis",
@@ -139,8 +139,8 @@
     "difficulty": "Advanced",
     "badge": "In-Memory",
     "badgeColor": "#dc382d",
-    "badgeBackgroundColor": "#fdeeea",
-    "badgeBorderColor": "#f7cbc6"
+    "badgeBackgroundColor": "#fef2f2",
+    "badgeBorderColor": "#fee2e2"
   },
   {
     "id": "kubernetes",
@@ -152,8 +152,8 @@
     "difficulty": "Advanced",
     "badge": "Orchestration",
     "badgeColor": "#326ce5",
-    "badgeBackgroundColor": "#eef2fb",
-    "badgeBorderColor": "#cbd8f7"
+    "badgeBackgroundColor": "#f2f5fd",
+    "badgeBorderColor": "#e0e7ff"
   },
   {
     "id": "sass",
@@ -165,8 +165,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Preprocessor",
     "badgeColor": "#cc6699",
-    "badgeBackgroundColor": "#fbf2f6",
-    "badgeBorderColor": "#f2cfe1"
+    "badgeBackgroundColor": "#fdf4f8",
+    "badgeBorderColor": "#fce7f3"
   },
   {
     "id": "nextjs",
@@ -178,8 +178,8 @@
     "difficulty": "Intermediate",
     "badge": "Full-Stack",
     "badgeColor": "#000000",
-    "badgeBackgroundColor": "#f1f1f1",
-    "badgeBorderColor": "#dcdcdc"
+    "badgeBackgroundColor": "#f9fafb",
+    "badgeBorderColor": "#f3f4f6"
   },
   {
     "id": "go",
@@ -191,8 +191,8 @@
     "difficulty": "Intermediate",
     "badge": "Performant",
     "badgeColor": "#00add8",
-    "badgeBackgroundColor": "#e6f8fc",
-    "badgeBorderColor": "#b0ecf7"
+    "badgeBackgroundColor": "#f0fdff",
+    "badgeBorderColor": "#cffafe"
   },
   {
     "id": "express",
@@ -204,8 +204,8 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Minimalist",
     "badgeColor": "#000000",
-    "badgeBackgroundColor": "#f3f4f6",
-    "badgeBorderColor": "#d5d9e0"
+    "badgeBackgroundColor": "#f9fafb",
+    "badgeBorderColor": "#f3f4f6"
   },
   {
     "id": "vite",
@@ -217,7 +217,7 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Lightning Fast",
     "badgeColor": "#646cff",
-    "badgeBackgroundColor": "#f0f1ff",
-    "badgeBorderColor": "#ccd1ff"
+    "badgeBackgroundColor": "#f5f6ff",
+    "badgeBorderColor": "#e0e7ff"
   }
 ]

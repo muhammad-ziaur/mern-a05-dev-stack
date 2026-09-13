@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from "react";
 import type { Itech } from "../../../types/tech";
 import SelectedStackCard from "./selectedstackcard/SelectedStackCard";
 import EmptyCard from "./emptycard/EmptyCard";
+import { Slide, toast } from "react-toastify";
 
 interface IYourStackProps {
   selectedStackArray: Itech[];
@@ -20,6 +21,18 @@ const YourStack = ({
     setYourSelectedStackMap(tempMap);
     const tempSelectedStackArray: Itech[] = [];
     setSelectedStackArray(tempSelectedStackArray);
+
+    toast.warn("All items are Removed: Your current Stack is Empty!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+    });
   };
 
   return (
@@ -61,7 +74,7 @@ const YourStack = ({
       <>
         {selectedStackArray.length !== 0 && (
           <button
-            className="text-red-700 font-bold border border-red-700 rounded-lg py-2 cursor-pointer flex flex-row justify-center items-center mt-15"
+            className="text-red-700 font-bold border border-red-700 rounded-lg py-2 cursor-pointer flex flex-row justify-center items-center mt-15  transition-transform hover:bg-red-700 hover:text-slate-200"
             onClick={handleRemoveAll}
           >
             Remove All

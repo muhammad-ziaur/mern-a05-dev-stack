@@ -19,7 +19,7 @@ const GivenStackCard = ({
   selectedStackArray,
   setSelectedStackArray,
 }: IGivenStackCardProps) => {
-  const handleAddtoStack = () => {
+  const handleAddToStack = () => {
     const tempMap: Record<string, boolean> = {};
     for (let key in yourSelectedStackMap)
       tempMap[key] = yourSelectedStackMap[key];
@@ -44,10 +44,24 @@ const GivenStackCard = ({
     });
   };
 
+  const handleAddedToStack = () => {
+    toast.error(`${itech.name} already exists in your Stack!!!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+    });
+  };
+
   return (
     // <div className="p-8 flex flex-col space-y-2 bg-white border border-[#F1F5F9]/80 rounded-2xl">
     <div
-      className={`p-8 grid grid-rows-12 bg-white border rounded-2xl ${yourSelectedStackMap[itech.id] ? "border-red-400" : "border-[#F1F5F9]/80"}`}
+      className={`p-8 grid grid-rows-12 bg-white border rounded-2xl ${yourSelectedStackMap[itech.id] ? "border-red-400 shadow-xl" : "border-common-border"}`}
     >
       <div className="row-span-3 flex justify-between md:items-start items-center">
         <div className="flex justify-start gap-3 md:items-start items-center">
@@ -105,7 +119,10 @@ const GivenStackCard = ({
 
         <div className="w-full">
           {yourSelectedStackMap[itech.id] ? (
-            <button className="w-full text-white border border-red-400 rounded-lg py-2 cursor-not-allowed flex flex-row justify-center items-center gap-1">
+            <button
+              className="w-full text-white border border-red-400 rounded-lg py-2 cursor-pointer flex flex-row justify-center items-center gap-1"
+              onClick={handleAddedToStack}
+            >
               <span className="text-red-400 font-bold">
                 <SiTicktick />
               </span>
@@ -116,7 +133,7 @@ const GivenStackCard = ({
           ) : (
             <button
               className="w-full bg-[#0A0F1D] text-white border-0 rounded-lg py-2 cursor-pointer"
-              onClick={handleAddtoStack}
+              onClick={handleAddToStack}
             >
               Add to Stack
             </button>

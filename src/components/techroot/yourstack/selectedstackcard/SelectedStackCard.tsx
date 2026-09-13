@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { Itech } from "../../../../types/tech";
 import { RxCross2 } from "react-icons/rx";
+import { Slide, toast } from "react-toastify";
 
 interface ISelectedStackCardProps {
   itech: Itech;
@@ -28,10 +29,22 @@ const SelectedStackCard = ({
       (elem: Itech) => elem.id !== itech.id,
     );
     setSelectedStackArray(tempSelectedStackArray);
+
+    toast.info(`${itech.name} has been Removed from your Stack!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+    });
   };
 
   return (
-    <div className="p-4 flex flex-col bg-white border border-slate-200 rounded-2xl">
+    <div className="p-4 flex flex-col bg-white border border-common-border rounded-2xl">
       <div className="flex justify-between items-center">
         <div className="flex justify-between items-center gap-2">
           <img
@@ -47,7 +60,7 @@ const SelectedStackCard = ({
           </div>
         </div>
         <span
-          className="text-2xl text-slate-400 font-semibold cursor-pointer"
+          className="text-2xl text-slate-400 font-semibold cursor-pointer transition-all hover:text-slate-700 hover:-translate-y-0.5 active:translate-y-0"
           onClick={handleTechRemove}
         >
           <RxCross2 />

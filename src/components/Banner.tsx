@@ -21,10 +21,10 @@ const Banner = () => {
         </p>
 
         <div className="flex gap-4 justify-center">
-          <button className="w-56 px-3 py-2 bg-brand-button font-semibold border-0 rounded-[10px] cursor-pointer text-center">
+          <button className="w-56 px-3 py-2 bg-brand font-semibold border-0 rounded-[10px] cursor-pointer text-center transition-all hover:-translate-y-0.5 active:translate-y-0 hover:shadow-xl hover:text-amber-200">
             Explore Technologies
           </button>
-          <button className="w-56 cursor-pointer font-semibold px-3 py-2 border-[0.25px] rounded-[10px] border-common-border bg-white text-[#374151] text-center">
+          <button className="w-56 cursor-pointer font-semibold px-3 py-2 border-[0.25px] rounded-[10px] border-common-border bg-white text-[#374151] text-center transition-all hover:-translate-y-0.5 active:translate-y-0 hover:shadow-xl hover:text-black">
             Learn More
           </button>
         </div>

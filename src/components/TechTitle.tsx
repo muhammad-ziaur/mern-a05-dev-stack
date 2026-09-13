@@ -3,7 +3,7 @@ const TechTitle = () => {
     <section className="container mx-auto md:text-left text-center py-12">
       <h1 className=" text-[#0F172A] text-center md:text-left font-bold md:text-4xl text-3xl pb-1">
         Explore the{" "}
-        <span className="bg-techtitle bg-clip-text text-transparent">
+        <span className="bg-brand bg-clip-text text-transparent pb-1 ">
           Technologies
         </span>
       </h1>

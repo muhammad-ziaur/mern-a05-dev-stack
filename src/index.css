@@ -8,15 +8,16 @@
     #d81b7e 50%,
     #7c3aed 100%
   );
-  --background-image-brand-button: linear-gradient(
+  /* --background-image-brand-button: linear-gradient(
     to right,
     #f97316 0%,
     #ec4899 100%
-  );
-  --background-image-techtitle: linear-gradient(
+  ); */
+  /* --background-image-techtitle: linear-gradient(
     to right,
     #ec4899 0%,
     #8b5cf6 100%
-  );
-  --color-common-border: #e5e7eb;
+  ); */
+
+  --color-common-border: #f3f4f6;
 }

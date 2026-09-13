@@ -1,75 +1,53 @@
-# React + TypeScript + Vite
+## 📝Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DevStack is a responsive web app built for creating the technology stack profile of a developer. 
+The app is primarily built with React and TypeScript. 
+Currently, the frontend of this app is deployed for [Live Preview](https://mern-a05-dev-stack.netlify.app/).
 
-Currently, two official plugins are available:
+## 🚀Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Smooth stack update operations.
+2. Appropriate notifications for every operation using `react-toastify`.
+3. Dynamic JSON data loading using `fetch()`: no hardcoded input data.
 
-## React Compiler
+## 🛠️Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React.js
+* TypeScript (ES6+)
+* Vite
+* TailwindCSS
+* React Icons
+* React Toastify
+* DaisyUI
+* ESLint
 
-## Expanding the ESLint configuration
+## ✍️Technical QnA
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 1. What is JSX, and why is it used in React?
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   🗣️ JSX denotes JavaScript XML or Extended JavaScript where we can write HTML elements inside JavaScript snippets to create our own custom elements. The sole purpose of React is to make our frontend development journey easier, and JSX makes that possible by letting us bypass the direct manipulation of the DOM and think purely in terms of components.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 2. What is the difference between props and state?
 
-```
+   🗣️ State acts like a variable for the UI to store data or changes in data from any kind of event within a website. Props, on the other hand, are the attributes of a React component that can be passed to the component by its parents as if the parent is making a function-call. Their main difference is that props are immutable from the child’s perspective, whereas state, when updated specifically by an updater function by any component that has access to the updater function, will guarantee any other component utilizing that state to be re-rendered.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 3. What does the useState hook do, and where did you use it in this project?
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   🗣️ useState hook helps us define a state variable: it returns an array where the first element is initialized by us and the second element is the updater function that we will use further to update the state and re-render related components to achieve a dynamic UI. I used useState() inside the “TechRoot” component of my project.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
-```
+   🗣️ useEffect() hook captures the essence of React better than any other hook: it literally “reacts” to the changes inside the dependencies that are sent to it via an array. The only exception is that when useEffect() inside a component doesn’t receive any dependency array, it will be executed whenever any re-rendering of the component happens, whereas an empty array passed as dependency array to the useEffect() hook will cause the hook to execute just once during the first render of the component. I used useEffect() inside the GivenStack component of my project to load the individual cards for the first time, and there is no better occasion to utilize useEffect() than loading the input data for the first time. I just leveraged the fact that no matter how many times the container of useEffect() component subsequently re-renders after the initial mount, an empty dependency array will ensure useEffect() executes only once and the cards don’t get reset every time instead of getting updated, unless the entire website itself is reloaded.
+
+## 5. Why does every item in a .map() list need a unique key prop?
+
+   🗣️ A unique key prop not only helps React target a specific component for efficient updates instead of traversing the entire array every time, but it also prevents accidental bugs during a re-render or a CRUD operation.
+
+## 6. What is conditional rendering? Show one place you used it
+
+   🗣️ When a portion of the viewport can be occupied by any component or part of a component among multiple options after fulfilling a set of conditions defined in the codebase, we call it conditional rendering. While rendering individual tech cards utilizing the list of GivenStackCards generated by the map() function inside the GivenStack component, I rendered the “Add to Stack” button for that card if it was not selected or it was removed from the stack of selected items, but the “Added to Stack” button in the same place in case the card was selected.
+
+## 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+   🗣️ Passing data from the parent to a child or a grandchild through intermediate components is a tedious process called “Props drilling.” A parent has to call its immediate child with props, and the child will then pass down the props to the child of its own until the props have finally reached its destination. On the other hand, a child cannot send anything directly to its parents unless the parent passes down a state updater function as a prop: if the child eventually updates the state through that updater function, then we can say that the child has finally sent something to its parent.

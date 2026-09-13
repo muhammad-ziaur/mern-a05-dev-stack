@@ -2,7 +2,7 @@ import banner from "../assets/banner-stack.png";
 
 const Banner = () => {
   return (
-    <section className="md:mt-0 mt-4 container mx-auto grid grid-cols-12 items-center">
+    <section className="md:mt-0 mt-12 container mx-auto grid grid-cols-12 items-center">
       <div className="col-span-12 md:col-span-6 flex flex-col gap-6 md:gap-10 md:items-start items-center">
         <div className="font-bold md:text-5xl text-4xl flex flex-col gap-px md:items-start items-center">
           <h1 className=" text-[#0F172A] text-center md:text-left">
@@ -34,7 +34,7 @@ const Banner = () => {
         <img
           src={banner}
           alt="banner image"
-          className="md:object-cover object-fill object-center"
+          className="object-cover object-center"
         />
       </div>
     </section>

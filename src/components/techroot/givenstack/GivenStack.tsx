@@ -35,7 +35,7 @@ const GivenStack = ({
   }, []);
   // console.log(yourSelectedStackMap);//Checking appropriate map update for every click on "Add to Stack" Button
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
       {givenStackArray.map((itech: Itech) => {
         // <GivenStackCard itech={itech} key={itech.id}/>
         return (

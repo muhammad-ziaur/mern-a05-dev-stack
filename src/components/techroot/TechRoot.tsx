@@ -18,9 +18,9 @@ const TechRoot = () => {
     Record<string, boolean>
   >({});
   return (
-    <section className="border-b-[0.05px] border-slate-200 pb-24">
-      <div className="container mx-auto grid grid-cols-12 gap-4">
-        <div className="col-span-9">
+    <section className="border-b-[0.05px] border-slate-200 pb-24 ">
+      <div className="container mx-auto grid grid-cols-12 gap-4 md:px-0 px-12">
+        <div className="md:col-span-9 col-span-12">
           <Suspense
             fallback={
               <div>
@@ -41,7 +41,7 @@ const TechRoot = () => {
             />
           </Suspense>
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-3 col-span-12">
           <YourStack
             selectedStackArray={selectedStackArray}
             setSelectedStackArray={setSelectedStackArray}

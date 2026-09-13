@@ -49,12 +49,18 @@ const GivenStackCard = ({
     <div
       className={`p-8 grid grid-rows-12 bg-white border rounded-2xl ${yourSelectedStackMap[itech.id] ? "border-red-400" : "border-[#F1F5F9]/80"}`}
     >
-      <div className="row-span-3 flex justify-between">
-        <img
-          src={itech.icon}
-          alt="card icon"
-          className="w-12 h-12 object-center object-cover"
-        />
+      <div className="row-span-3 flex justify-between md:items-start items-center">
+        <div className="flex justify-start gap-3 md:items-start items-center">
+          <img
+            src={itech.icon}
+            alt="card icon"
+            className="w-12 h-12 object-center object-cover"
+          />
+          <h2 className="md:hidden block text-3xl text-[#0F172A] font-semibold">
+            {itech.name}
+          </h2>
+        </div>
+
         <div
           className="h-8 flex items-center justify-center p-2"
           style={{
@@ -70,7 +76,9 @@ const GivenStackCard = ({
 
       {/* <div className="flex flex-col text-left justify-between border-b-gray-400"> */}
       <div className="row-span-5 flex flex-col gap-3 text-left justify-start pb-8">
-        <h2 className="text-3xl text-[#0F172A] font-semibold">{itech.name}</h2>
+        <h2 className="md:block hidden text-3xl text-[#0F172A] font-semibold">
+          {itech.name}
+        </h2>
         <p className="text-1rem text-[#64748B]">{itech.description}</p>
       </div>
       <div className="row-span-4 flex flex-col justify-start gap-5 border-t-[0.5px] border-t-gray-200 pt-2">
